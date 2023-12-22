@@ -7,7 +7,7 @@ import HelloWorld from "./components/HelloWorld.vue";
 <template>
   <div class="header">
     <div>
-      <HeaderComponent> </HeaderComponent>
+      <HeaderComponent />
     </div>
     <div>
       <nav>
