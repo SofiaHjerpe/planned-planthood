@@ -82,7 +82,7 @@ h4 {
 .plant-name {
   display: flex;
   justify-content: space-between;
-  margin: 15px;
+  margin: 20px;
   margin-top: 60px;
   margin-inline: 16px;
 }
