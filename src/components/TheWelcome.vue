@@ -1,14 +1,18 @@
 <script setup>
 import SeasonView from "../components/SeasonView.vue";
 import PlannedPlants from "../components/PlannedPlants.vue";
+import FooterComponent from "./FooterComponent.vue";
+import ReturnView from "./ReturnView.vue";
 </script>
 
 <template>
-  <div class="planned-container">
+  <div class="planned-container" id="start">
     <h1>Planned planthood</h1>
     <SeasonView :reverseComponent="false" />
     <PlannedPlants />
     <SeasonView :reverseComponent="true" />
+    <FooterComponent />
+    <ReturnView />
   </div>
 </template>
 <style scoped>
