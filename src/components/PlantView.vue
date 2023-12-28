@@ -1,6 +1,6 @@
 
 <template>
-  <div style="display: flex">
+  <div style="display: flex; height: 540px">
     <div>
       <img
         :class="flower[0].width >= 500 ? 'headerImg' : 'plannedPlant'"
@@ -33,7 +33,7 @@ export default {
 <style scoped>
 .headerImg {
   width: 501px;
-  max-height: 540px;
+  height: 540px;
 }
 .plannedPlant {
   max-width: 294px;

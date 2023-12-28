@@ -1,28 +1,35 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import HeaderComponent from "./components/HeaderComponent.vue";
-
 </script>
 
 <template>
-  <div class="header">
-    <div>
-      <HeaderComponent />
-    </div>
-    <div>
-      <nav>
-        <RouterLink to="/">Planner</RouterLink>
-        <RouterLink to="/">Historik</RouterLink>
-        <RouterLink to="/">Tips</RouterLink>
-        <RouterLink to="/">Logga in</RouterLink>
-      </nav>
-    </div>
-  </div>
+  <div class="page-container">
+    <div class="header">
+   
+        <HeaderComponent />
 
-  <RouterView />
+      <div>
+        <nav>
+          <RouterLink to="/">Planner</RouterLink>
+          <RouterLink to="/">Historik</RouterLink>
+          <RouterLink to="/">Tips</RouterLink>
+          <RouterLink to="/">Logga in</RouterLink>
+        </nav>
+      </div>
+    </div>
+
+    <RouterView />
+  </div>
 </template>
 
 <style scoped>
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .header {
   display: flex;
   flex-direction: column;
@@ -33,10 +40,10 @@ import HeaderComponent from "./components/HeaderComponent.vue";
 
 nav {
   width: 1001px;
-  top: 0;
   display: flex;
   justify-content: center;
   gap: 150px;
+  z-index: 9999;
   align-items: center;
   background-color: #fff;
   box-shadow: 0px 4px 4px 0px #03382f1c;
