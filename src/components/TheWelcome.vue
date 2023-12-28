@@ -6,8 +6,9 @@ import PlannedPlants from "../components/PlannedPlants.vue";
 <template>
   <div class="planned-container">
     <h1>Planned planthood</h1>
-    <SeasonView />
+    <SeasonView :reverseComponent="false" />
     <PlannedPlants />
+    <SeasonView :reverseComponent="true" />
   </div>
 </template>
 <style scoped>

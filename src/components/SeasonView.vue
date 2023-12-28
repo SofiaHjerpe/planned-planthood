@@ -1,31 +1,78 @@
 
 <template>
-  <div style="display: flex; gap: 35px">
+  <div
+    v-if="reverseComponent == false"
+    :class="reverseComponent == true ? 'reverseItems' : 'originalItems'"
+  >
+    <div style="display: flex; justify-content: space-between">
+      <div class="circle">
+        <img :src="seedInfo[0].icon" class="seed" alt="seed" />
+      </div>
+      <div class="info-text">
+        <div>
+          <h2>{{ seedInfo[0].title }}</h2>
+        </div>
+        <div>
+          <p>Våren är äntligen här i kollektivet!</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <p>Nesciunt laborum maiores dolorum possimus aliquid</p>
+        </div>
+        <div>
+          <button class="sa-btn">{{ seedInfo[0].btnText }}</button>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; justify-content: center">
+      <hr class="green-line" />
+    </div>
+  </div>
+  <div
+    v-if="reverseComponent == true"
+    :class="reverseComponent == true ? 'reverseItems' : 'originalItems'"
+  >
     <div class="circle">
-      <img src="../assets/img/Vectorseedpackage.svg" class="seed" alt="seed" />
+      <img :src="seedInfo[1].icon" class="seed" alt="seed" />
     </div>
     <div class="info-text">
       <div>
-        <h2>Säsong att så</h2>
+        <h2>{{ seedInfo[1].title }}</h2>
       </div>
       <div>
         <p>Våren är äntligen här i kollektivet!</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        <p>Cupiditate, ab quod dolores eu fugiat nulla pariatur.</p>
+        <p>Nesciunt laborum maiores dolorum possimus aliquid</p>
       </div>
       <div>
-        <button class="sa-btn">Så-tips</button>
+        <button class="longBtn">{{ seedInfo[1].btnText }}</button>
       </div>
     </div>
   </div>
-  <div style="display:flex; justify-content: center">
-    <hr class="green-line" />
-  </div>
 </template>
 <script>
-export default {};
+import seed from "../seed.js";
+export default {
+  props: {
+    reverseComponent: Boolean,
+  },
+  data() {
+    return {
+      seedInfo: seed.seedInfo,
+    };
+  },
+};
 </script>
  <style scoped>
+.reverseItems {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  padding-inline: 40px 10px;
+}
+.originalItems {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
 h2 {
   font-weight: 700;
   font-family: "Open-sans", sans-serif;
@@ -75,7 +122,23 @@ p {
   text-transform: uppercase;
   line-height: 32.68px;
   margin-top: 10px;
-  margin-inline: 230px 0;
+  margin-inline: 230px 30px;
+}
+.longBtn {
+  box-shadow: 0px 4px 4px 0px #00000040;
+  background-color: #0a846e;
+  color: #fff;
+  border-radius: 9px;
+  height: 63px;
+  width: 281px;
+  border: none;
+  outline: none;
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32.68px;
+  margin-top: 10px;
+  align-self: center;
 }
 .green-line {
   background-color: #055647;
