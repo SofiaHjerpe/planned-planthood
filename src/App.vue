@@ -53,7 +53,6 @@ export default {
   <div class="page-container">
     <div @click="toggleNavView(myPage)" class="header">
       <HeaderComponent />
-
       <div>
         <nav>
           <div>
@@ -119,7 +118,10 @@ export default {
 .menu {
   height: 30px;
   width: 40px;
-  margin-top: -400px;
+  margin-inline: 300px 0;
+  margin-top: -530px;
+  position: relative;
+  z-index: 9999;
 }
 .menu div {
   display: block;
@@ -141,6 +143,8 @@ export default {
   height: 100%;
   z-index: 9999;
   width: 200px;
+  position: relative;
+  z-index: 9999;
 }
 .line1 {
   transform: rotate(-45deg) translate(-6px, 6px);
@@ -157,14 +161,8 @@ export default {
   justify-content: center;
   align-items: center;
 }
+
 .header {
-  display: flex;
-  flex-direction: column;
-  width: 1200px;
-  align-items: center;
-  justify-content: center;
-}
-.headerReverse {
   display: flex;
   flex-direction: column;
   width: 1200px;
@@ -207,5 +205,36 @@ nav a {
 }
 a:hover {
   background-color: transparent;
+}
+@media screen and (max-width: 768px) {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  .page-container {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .link {
+    margin-inline: 0;
+  }
+  .link2 {
+    margin-inline: 0;
+  }
+  .header {
+    width: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  ul {
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+    width: 100%;
+    justify-content: center;
+
+    gap: 15px;
+    align-items: center;
+  }
 }
 </style>

@@ -1,15 +1,14 @@
 
 <template>
   <div class="header" style="display: flex; height: 540px">
-    <div>
-      <img
-        :class="flower[0].width >= 500 ? 'headerImg' : 'plannedPlant'"
-        :src="flower[0].imageUrl"
-        alt="flowerImg"
-      />
-      <img :src="flower[0].logoUrl" class="plantLogo" alt="flowerIcon" />
-    </div>
-    <div style="display: flex; flex-direction: column">
+    <img
+      :class="flower[0].width >= 500 ? 'headerImg' : 'plannedPlant'"
+      :src="flower[0].imageUrl"
+      alt="flowerImg"
+    />
+    <img :src="flower[0].logoUrl" class="plantLogo" alt="flowerIcon" />
+
+    <div class="rectangle-container">
       <div class="rectangle r1">
         <img src="../assets/img/seedling.svg" class="seed" alt="flowerIcon1" />
       </div>
@@ -31,19 +30,9 @@ export default {
 };
 </script>
 <style scoped>
-@media screen and (max-width: 768px) {
-  .header {
-    display: flex;
-    flex-direction: column;
-    height: 900px;
-  }
-  .rectangle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 195px;
-    height: 295px;
-  }
+.rectangle-container {
+  display: flex;
+  flex-direction: column;
 }
 .headerImg {
   width: 501px;
@@ -57,7 +46,7 @@ export default {
   position: absolute;
   max-width: 190px;
   margin-top: 170px;
-  margin-inline: -340px;
+  margin-inline: 150px;
 }
 .rectangle {
   display: flex;
@@ -77,5 +66,43 @@ export default {
 }
 .seed:nth-of-type(2) {
   max-width: 155px;
+}
+@media screen and (max-width: 768px) {
+  .rectangle-container {
+    flex-direction: row;
+  }
+  .header {
+    flex-direction: column;
+    height: 1000px;
+  }
+  .rectangle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 195px;
+    height: 295px;
+  }
+  .headerImg {
+    width: 390px;
+    z-index: 9999;
+    height: 390px;
+  }
+  #app {
+    padding: 0;
+  }
+
+  .plantLogo {
+    position: absolute;
+    width: 190px;
+    z-index: 9999;
+    margin-top: 80px;
+    margin-inline: 90px;
+  }
+  .seed {
+    max-width: 112px;
+  }
+  .seed:nth-of-type(2) {
+    max-width: 98px;
+  }
 }
 </style>
