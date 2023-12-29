@@ -34,4 +34,12 @@ h1 {
   width: 1000px;
   background-color: #fff;
 }
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+  }
+  .planned-container {
+    max-width: 768px;
+  }
+}
 </style>

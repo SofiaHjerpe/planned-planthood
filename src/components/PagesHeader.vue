@@ -55,4 +55,15 @@ h1 {
   align-self: center;
   font-weight: 500;
 }
+@media screen and (max-width: 768px) {
+  .bg-overlay {
+    height: 379px;
+    margin-top: -340px;
+  }
+  .headerImg {
+    width: 768px;
+    height: 379px;
+    z-index: -1;
+  }
+}
 </style>

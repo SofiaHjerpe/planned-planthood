@@ -33,6 +33,7 @@ export default {
 .rectangle-container {
   display: flex;
   flex-direction: column;
+  gap: 0;
 }
 .headerImg {
   width: 501px;
@@ -54,6 +55,7 @@ export default {
   align-items: center;
   width: 500px;
   height: 270px;
+  margin-bottom: 0;
 }
 .r1 {
   background: #0a846e;
@@ -73,22 +75,21 @@ export default {
   }
   .header {
     flex-direction: column;
-    height: 1000px;
+    height: 590px;
   }
   .rectangle {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 195px;
-    height: 295px;
+    height: 195px;
+    z-index: 9999;
+    margin: 0;
   }
   .headerImg {
     width: 390px;
     z-index: 9999;
     height: 390px;
-  }
-  #app {
-    padding: 0;
   }
 
   .plantLogo {
