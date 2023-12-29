@@ -1,6 +1,6 @@
 
 <template>
-  <div style="display: flex; height: 540px">
+  <div class="header" style="display: flex; height: 540px">
     <div>
       <img
         :class="flower[0].width >= 500 ? 'headerImg' : 'plannedPlant'"
@@ -31,6 +31,20 @@ export default {
 };
 </script>
 <style scoped>
+@media screen and (max-width: 768px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    height: 900px;
+  }
+  .rectangle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 195px;
+    height: 295px;
+  }
+}
 .headerImg {
   width: 501px;
   height: 540px;
