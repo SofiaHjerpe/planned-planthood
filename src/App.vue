@@ -1,20 +1,28 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import HeaderComponent from "./components/HeaderComponent.vue";
+import MyPages from "./views/MyPages.vue";
+
+defineProps({
+  myPage: {
+    type: Boolean,
+    value: false,
+    required: true,
+  },
+});
 </script>
 
 <template>
   <div class="page-container">
     <div class="header">
-   
-        <HeaderComponent />
+      <HeaderComponent />
 
       <div>
         <nav>
           <RouterLink to="/">Planner</RouterLink>
           <RouterLink to="/">Historik</RouterLink>
           <RouterLink to="/">Tips</RouterLink>
-          <RouterLink to="/">Logga in</RouterLink>
+          <RouterLink to="/mypages">Logga in</RouterLink>
         </nav>
       </div>
     </div>
@@ -22,6 +30,7 @@ import HeaderComponent from "./components/HeaderComponent.vue";
     <RouterView />
   </div>
 </template>
+
 
 <style scoped>
 .page-container {
@@ -31,6 +40,13 @@ import HeaderComponent from "./components/HeaderComponent.vue";
   align-items: center;
 }
 .header {
+  display: flex;
+  flex-direction: column;
+  width: 1200px;
+  align-items: center;
+  justify-content: center;
+}
+.headerReverse {
   display: flex;
   flex-direction: column;
   width: 1200px;
