@@ -23,7 +23,7 @@
 <script>
 export default {};
 </script>
-<style>
+<style scoped>
 .bg {
   margin-top: 100px;
   background-image: url("../assets/img/footer.jpg");
@@ -47,6 +47,7 @@ export default {};
   width: 1000px;
   z-index: 9999;
   align-items: center;
+  gap: 0;
   padding: 150px;
   justify-content: space-between;
 }
@@ -55,6 +56,7 @@ export default {};
   font-weight: 500;
   font-size: 64px;
   color: #fff;
+  margin-inline: 0;
 }
 .footer-all-info {
   display: flex;
@@ -64,6 +66,7 @@ export default {};
   width: 500px;
   margin-top: 50px;
   padding: 16px;
+  margin-top: 0;
 }
 .footer-info {
   display: flex;
@@ -78,11 +81,65 @@ export default {};
   height: 35px;
   align-self: center;
   margin-top: 10px;
+  bottom: 0;
 }
 .f-info {
   color: #fff;
   font-family: "Maven-pro", sans-serif;
   font-weight: 400;
   font-size: 20px;
+}
+@media screen and (max-width: 768px) {
+  .bg-overflow {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+  }
+
+  .seeu {
+    font-size: 32px;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-inline: 0 190px;
+  }
+  .bg-overlay {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    background-color: #05564733;
+    height: 100%;
+  }
+  .text-and-icon {
+    flex-direction: column-reverse;
+    width: 600px;
+    z-index: 9999;
+    align-items: center;
+    gap: 200px;
+    padding: 0;
+    justify-content: center;
+  }
+  .text-and-icon img {
+    margin-top: -250px;
+    margin-inline: 0 200px;
+    width: 190px;
+  }
+  .bg {
+    flex-direction: column-reverse;
+    height: 774px;
+    background-image: url("../assets/img/footer.jpg");
+    background-size: cover;
+    background-position: 50%;
+  }
+  .footer-all-info {
+    margin-top: 130px;
+    width: 400px;
+  }
+  .f-info {
+    font-size: 12px;
+  }
+  .footer-info:nth-of-type(2) {
+    margin-inline: 0 30px;
+  }
 }
 </style>

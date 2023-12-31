@@ -1,6 +1,6 @@
 <template>
   <div class="cards">
-    <div v-for="i in firstRow" :key="i">
+    <div v-show="!mobile" v-for="i in firstRow" :key="i">
       <div class="card">
         <img class="plannedPlant" :src="i.imageUrl" alt="flowerImg" />
         <img :src="i.logoUrl" class="plantLogo" alt="flowerIcon" />
@@ -16,7 +16,7 @@
     </div>
   </div>
   <div class="cards">
-    <div v-for="i in secondRow" :key="i">
+    <div v-show="!mobile" v-for="i in secondRow" :key="i">
       <div class="card">
         <img class="plannedPlant" :src="i.imageUrl" alt="flowerImg" />
         <img :src="i.logoUrl" class="plantLogo" alt="flowerIcon" />
@@ -31,14 +31,28 @@
       </div>
     </div>
   </div>
+  <div v-show="mobile">
+    <MobileCard />
+  </div>
 </template>
 <script>
 import plants from "../plants.js";
+import MobileCard from "../components/MobileCard.vue";
 export default {
+  components: {
+    MobileCard,
+  },
   data() {
     return {
       plant: plants.plant,
+      mobile: false,
+      mobileWidth: false,
     };
+  },
+  created() {
+    window.addEventListener("load", this.checkScreen);
+
+    window.addEventListener("resize", this.checkScreen);
   },
 
   computed: {
@@ -47,6 +61,20 @@ export default {
     },
     secondRow() {
       return this.plant.slice(3, 6);
+    },
+  },
+  methods: {
+    toggleMobileView() {
+      this.mobileWidth = !this.mobileWidth;
+    },
+    checkScreen() {
+      this.windowWidth = window.innerWidth;
+      if (this.windowWidth <= 750) {
+        this.mobile = true;
+        this.mobileWidth = true;
+        return;
+      }
+      this.mobile = false;
     },
   },
 };
@@ -96,6 +124,7 @@ h4 {
   margin-inline: 16px;
 }
 .plantLogo {
+  display: flex;
   margin-top: -250px;
   width: 50%;
   align-self: center;
@@ -107,9 +136,6 @@ h4 {
   width: 100%;
   gap: 20px;
 }
-.plantLogo {
-  display: flex;
-}
 
 .card {
   display: flex;
@@ -118,5 +144,12 @@ h4 {
   box-shadow: 3px 4px 4px 0px #00000040;
   width: 294px;
   height: 407px;
+}
+@media screen and (max-width: 768px) {
+  .cards {
+    max-width: 300px;
+    gap: 13px;
+  }
+  
 }
 </style>

@@ -17,11 +17,13 @@ import CardComponent from "./CardComponent.vue";
   display: flex;
   flex-direction: column;
   gap: 40px;
+  max-width: 100%;
 }
 .heading {
   font-family: "Lato", sans-serif;
   font-weight: 600;
   font-size: 32px;
+  margin-bottom: 0;
   align-self: center;
   line-height: 38.4px;
 }
@@ -39,7 +41,31 @@ import CardComponent from "./CardComponent.vue";
   font-weight: 600;
   line-height: 32.68px;
   margin-top: 10px;
+  text-transform: none;
   align-self: center;
+  margin-inline: 0;
 }
+@media screen and (max-width: 768px) {
+  .plants {
+    display: block;
+  }
+  .heading {
+    font-size: 16px;
+    margin-inline: 90px;
+    margin-bottom: 10px;
+  }
 
+  .more {
+    height: 35px;
+    width: 116px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    margin-top: 10px;
+    align-self: center;
+    margin-top: 30px;
+    margin-inline: 140px;
+  }
+}
 </style>

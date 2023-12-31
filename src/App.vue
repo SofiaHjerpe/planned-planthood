@@ -147,13 +147,13 @@ export default {
   z-index: 9999;
 }
 .line1 {
-  transform: rotate(-45deg) translate(-6px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
 }
 .line2 {
   opacity: 0;
 }
 .line3 {
-  transform: rotate(45deg) translate(-5px, -6px);
+  transform: rotate(45deg) translate(-5px, -10px);
 }
 .page-container {
   display: flex;

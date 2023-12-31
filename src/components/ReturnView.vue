@@ -15,9 +15,23 @@ a {
   font-weight: 400;
   padding: 20px;
   font-size: 20px;
+  margin: 0;
 }
 a:hover {
   background: none;
   background-color: transparent;
+}
+@media screen and (max-width: 768px) {
+  .return {
+    display: block;
+    height: 60px;
+  }
+  a {
+    padding: 130px;
+    font-size: 12px;
+    position: relative;
+   top: 15px;
+
+  }
 }
 </style>

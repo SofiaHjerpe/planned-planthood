@@ -24,6 +24,7 @@ h1 {
   color: #0a846e;
   margin-top: 20px;
   align-self: center;
+  padding: 0;
 }
 .planned-container {
   display: flex;
@@ -37,9 +38,13 @@ h1 {
 @media screen and (max-width: 768px) {
   h1 {
     font-size: 24px;
+    margin-top: 40px;
+    padding: 50px;
   }
   .planned-container {
+    display: block;
     max-width: 768px;
+    overflow: hidden;
   }
 }
 </style>
