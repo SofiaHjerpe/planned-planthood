@@ -11,7 +11,8 @@
         </div>
         <div class="plant-name">
           <p class="plant">{{ plant[0].plant }}</p>
-          <button class="remove">Ta bort</button>
+          <button v-show="!mobile" class="remove">Ta bort</button>
+          <span v-show="mobile" class="material-symbols-outlined">delete</span>
         </div>
       </div>
       <div class="card">
@@ -23,7 +24,8 @@
         </div>
         <div class="plant-name">
           <p class="plant">{{ plant[0].plant }}</p>
-          <button class="remove">Ta bort</button>
+          <button v-show="!mobile" class="remove">Ta bort</button>
+          <span v-show="mobile" class="material-symbols-outlined">delete</span>
         </div>
       </div>
     </div>
@@ -35,7 +37,24 @@ export default {
   data() {
     return {
       plant: plants.plant,
+      mobile: false,
+      windowWidth: null,
     };
+  },
+  created() {
+    window.addEventListener("load", this.checkScreen);
+
+    window.addEventListener("resize", this.checkScreen);
+  },
+  methods: {
+    checkScreen() {
+      this.windowWidth = window.innerWidth;
+      if (this.windowWidth <= 750) {
+        this.mobile = true;
+        return;
+      }
+      this.mobile = false;
+    },
   },
 };
 </script>
@@ -119,5 +138,72 @@ h4 {
   width: 294px;
   height: 407px;
   margin-inline: 30px;
+}
+@media screen and (max-width: 768px) {
+  .planted {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .planted-plants {
+    font-size: 16px;
+    align-self: flex-start;
+    margin-inline: 80px;
+    margin-top: 30px;
+  }
+
+  .plannedPlant {
+    width: 175px;
+    height: 160px;
+  }
+  h4 {
+    font-family: "Lato", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 28.8px;
+  }
+  .material-symbols-outlined {
+    color: #b93857;
+    width: 13px;
+    height: 16px;
+  }
+  .plant {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-size: 10px;
+  }
+  .plant-name {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-inline: 10px;
+  }
+  .plant-name:nth-of-type(2) {
+    margin-top: 0;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 3px 4px 4px 0px #00000040;
+    width: 175px;
+    height: 220px;
+    margin-inline: 5px;
+  }
+  .date {
+    font-weight: 700;
+    font-family: "Open-sans", sans-serif;
+    font-size: 10px;
+    margin-inline: 0;
+    align-self: center;
+  }
+  .plantLogo {
+    display: flex;
+    margin-top: 0;
+    color: #fff;
+    width: 65px;
+    margin-top: -130px;
+    height: 89px;
+    align-self: center;
+  }
 }
 </style>

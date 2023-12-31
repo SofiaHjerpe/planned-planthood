@@ -10,13 +10,13 @@
       <input class="input" type="text" name="date" id="date" />
     </div>
   </div>
-  <div style="display: flex; justify-content: center">
+  <div class="btn-container">
     <button class="addBtn">Lägg till</button>
   </div>
 </template>
 <style scoped>
 .add {
-  margin-top: 0;
+  margin: 0;
   color: #060606;
   font-weight: 400;
   font-size: 32px;
@@ -41,11 +41,16 @@
   margin-top: 30px;
   align-self: center;
 }
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin-inline: 0;
+}
 .inputs {
   display: flex;
   flex-direction: row;
   margin-top: 20px;
-  gap: 30px;
+  gap: 10px;
   align-items: center;
   justify-content: center;
 }
@@ -59,6 +64,7 @@ label {
   font-size: 20px;
   font-weight: 400;
   line-height: 27.24px;
+  margin-inline: 0;
 }
 .input {
   width: 442px;
@@ -69,5 +75,43 @@ label {
   align-self: center;
   outline: none;
   line-height: 43.58px;
+  margin-inline: 0;
+}
+@media screen and (max-width: 768px) {
+  .add {
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-top: -70px;
+    margin-inline: 80px;
+  }
+  label {
+    font-size: 12px;
+    margin-inline: 10px;
+  }
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .input {
+    width: 357px;
+    height: 36px;
+    margin-inline: 10px;
+  }
+  .btn-container {
+    justify-content: flex-start;
+    line-height: 22px;
+    margin-inline: 120px 0;
+  }
+  .addBtn {
+    height: 34px;
+    width: 116px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: 700;
+    align-self: flex-start;
+  }
 }
 </style>

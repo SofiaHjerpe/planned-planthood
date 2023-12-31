@@ -36,6 +36,8 @@ export default {
   width: 189px;
   height: 186px;
   z-index: 9999;
+  bottom: 0;
+  margin-inline: 0;
 }
 .logo {
   display: flex;
@@ -54,6 +56,8 @@ h1 {
   color: #fff;
   align-self: center;
   font-weight: 500;
+  bottom: 0;
+  margin-inline: 0;
 }
 @media screen and (max-width: 768px) {
   .bg-overlay {
@@ -65,14 +69,36 @@ h1 {
     width: 390px;
     height: 390px;
     margin-top: -40px;
-
+    margin-bottom: 80px;
     z-index: -1;
   }
   .logo {
     position: relative;
     margin-top: 0;
     z-index: 9999;
-    bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .logo {
+    width: 100%;
+    height: 10px;
+  }
+  .plantLogo {
+    align-self: flex-start;
+    margin-inline: 100px;
+    position: relative;
+    bottom: 360px;
+    width: 189px;
+    height: 186px;
+    z-index: 9999;
+  }
+  h1 {
+    font-size: 32px;
+    align-self: flex-start;
+    bottom: 350px;
+    margin-inline: 120px;
+    position: relative;
+    z-index: 9999;
   }
 }
 </style>

@@ -53,13 +53,18 @@ export default {
 <template>
   <div class="page-container">
     <div @click="toggleNavView(myPage)" class="header">
-      <div>
+      <div v-if="$route.name == 'planner'">
         <HeaderComponent />
       </div>
       <div>
         <nav>
           <div>
-            <div class="menu" @click="toggleMobileView" v-show="mobile">
+            <div
+              v-if="$route.name == 'planner' || $route.name == 'mypages'"
+              :class="$route.name == 'mypages' ? 'menuDown' : 'menu'"
+              @click="toggleMobileView"
+              v-show="mobile"
+            >
               <div :class="{ line1: mobileNav }"></div>
               <div :class="{ line2: mobileNav }"></div>
               <div :class="{ line3: mobileNav }"></div>
@@ -125,6 +130,29 @@ export default {
   margin-top: -530px;
   position: relative;
   z-index: 9999;
+}
+.menuDown {
+  height: 30px;
+  width: 40px;
+  margin-inline: 300px 0;
+  margin-top: 10px;
+  position: relative;
+  z-index: 9999;
+}
+
+.menuDown div {
+  display: block;
+  z-index: 9999;
+  width: 40px;
+  box-shadow: 0px 4px 4px 0px #00000040;
+
+  height: 6px;
+  background-color: #fff;
+  margin: 5px;
+  border-radius: 9px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  transition: 0.8s ease all;
 }
 .menu div {
   display: block;

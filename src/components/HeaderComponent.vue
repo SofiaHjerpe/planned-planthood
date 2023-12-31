@@ -14,5 +14,10 @@ import PlantView from "./PlantView.vue";
   align-items: flex-start;
   justify-content: flex-start;
 }
-
+@media screen and  (max-width: 768px){
+  .header{
+    display: flex;
+    flex-direction: column;
+  }
+}
 </style>
