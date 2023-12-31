@@ -28,6 +28,7 @@ export default {
     toggleNavView() {
       this.myPage = !this.myPage;
     },
+
     removeMobileView() {
       if (this.mobileNav == true) {
         return (this.mobileNav = false);
@@ -52,7 +53,9 @@ export default {
 <template>
   <div class="page-container">
     <div @click="toggleNavView(myPage)" class="header">
-      <HeaderComponent />
+      <div>
+        <HeaderComponent />
+      </div>
       <div>
         <nav>
           <div>

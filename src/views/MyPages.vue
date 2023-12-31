@@ -3,13 +3,14 @@ import PagesHeader from "@/components/PagesHeader.vue";
 import AddPlan from "@/components/AddPlan.vue";
 import PlanComponent from "@/components/PlanComponent.vue";
 import ReturnView from "@/components/ReturnView.vue";
+import PagesFooter from "@/components/PagesFooter.vue";
 </script>
 <template>
   <div class="myPages" id="start">
     <PagesHeader />
     <AddPlan />
     <PlanComponent />
-    <!-- footer component !important -->
+    <PagesFooter />
     <ReturnView />
   </div>
 </template>

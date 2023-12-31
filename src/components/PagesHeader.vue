@@ -58,12 +58,21 @@ h1 {
 @media screen and (max-width: 768px) {
   .bg-overlay {
     height: 379px;
-    margin-top: -340px;
+    margin-top: -395px;
+    z-index: -1;
   }
   .headerImg {
-    width: 768px;
-    height: 379px;
+    width: 390px;
+    height: 390px;
+    margin-top: -40px;
+
     z-index: -1;
+  }
+  .logo {
+    position: relative;
+    margin-top: 0;
+    z-index: 9999;
+    bottom: 0;
   }
 }
 </style>
